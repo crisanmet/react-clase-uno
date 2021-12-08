@@ -34,17 +34,17 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta({ datos }) {
+export function Tarjeta(props) {
   return (
     <div className="tarjeta">
       <img
-        src={datos.img}
-        alt={`Foto de ${datos.nombre}`}
+        src={props.img}
+        alt={`Foto de ${props.nombre}`}
         className="tarjeta-img"
       ></img>
       <div className="tarjeta-data">
-        <header className="tarjeta-data-header">{datos.nombre}</header>
-        <span>{datos.titulo} </span>
+        <header className="tarjeta-data-header">{props.nombre}</header>
+        <span>{props.titulo} </span>
       </div>
     </div>
   );
@@ -115,16 +115,11 @@ export function BlogPost(props) {
         <h2 className="post-title">{props.titulo} </h2>
         <Tarjeta {...props.autor} />
       </header>
-      <p className="post-paragraph">Hoy vi una ardilla.</p>
-      <p className="post-paragraph">
-        La ardilla era negra, era más grande que otras ardillas, tenía muchos
-        dientes grandes y encima andaba siempre en cuatro patas, moviendo la
-        cola.
-      </p>
-      <p className="post-paragraph">
-        Creo que puede haber sido un perro, dado que en Argentina no hay
-        ardillas.
-      </p>
+      {props.parrafos.split("\n").map((parrafo, index) => (
+        <p key={index} className="post-paragraph">
+          {parrafo}
+        </p>
+      ))}
     </article>
   );
 }
