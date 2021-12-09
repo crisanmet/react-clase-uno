@@ -1,5 +1,6 @@
 import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
 import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
+import { CheckboxList } from "./tarea/Tarea3.js";
 
 //TAREA 1
 // ReactDOM.render(
@@ -26,27 +27,39 @@ import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
 // );
 
 //TAREA 2
+// ReactDOM.render(
+//   <React.Fragment>
+//     <MatchNombre nombre="Cristian" />
+//     <PasswordInput minLength="5" />
+//     <ValidationInput
+//       label="Password"
+//       validar={(value) => value.length >= 8}
+//       password="true"
+//     />
+//     <ValidationInput
+//       label="Input sin espacios:"
+//       validar={(value) => !value.match(" ")}
+//     />
+//     <ValidationInput
+//       label="dirección de email:"
+//       validar={(value) =>
+//         !value.match(
+//           /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//         )
+//       }
+//     />
+//   </React.Fragment>,
+//   document.getElementById("react-app")
+// );
+
+//TAREA 3
 ReactDOM.render(
-  <React.Fragment>
-    <MatchNombre nombre="Cristian" />
-    <PasswordInput minLength="5" />
-    <ValidationInput
-      label="Password"
-      validar={(value) => value.length >= 8}
-      password="true"
-    />
-    <ValidationInput
-      label="Input sin espacios:"
-      validar={(value) => !value.match(" ")}
-    />
-    <ValidationInput
-      label="dirección de email:"
-      validar={(value) =>
-        !value.match(
-          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )
-      }
-    />
-  </React.Fragment>,
+  <CheckboxList
+    items={{
+      Uno: false,
+      Dos: true,
+      Tres: false,
+    }}
+  />,
   document.getElementById("react-app")
 );
